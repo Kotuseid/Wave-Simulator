@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waves</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
+</head>
+
+<body>
+    <div class="controls">
+        <div class="input">
+            <label for="amplitude">Amplitude</label>
+            <input type="range" name="amplitude" id="amplitude" min="0.5" max="8" step="0.5" value="3"
+                list="amplitudeList">
+            <datalist id="amplitudeList">
+                <option value="0.5">0.5</option>
+                <option value="3.0">3.0</option>
+                <option value="8.0">8.0</option>
+            </datalist>
+            <p class="inputValue" id="amplitudeValue">3.0 cm</p>
+        </div>
+        <div class="input">
+            <label for="wavelength">Wavelength</label>
+            <input type="range" name="wavelength" id="wavelength" min="0.5" max="30" step="0.5" value="3"
+                list="wavelengthList">
+            <datalist id="wavelengthList">
+                <option value="1.0">1.0</option>
+                <option value="3.0">3.0</option>
+                <option value="10.0">10.0</option>
+            </datalist>
+            <p class="inputValue" id="wavelengthValue">3.0 cm</p>
+        </div>
+        <div class="input">
+            <label for="frequency">Frequency</label>
+            <input type="range" name="frequency" id="frequency" min="0.1" max="10" step="0.1" value="0.5"
+                list="frequencyList">
+            <datalist id="frequencyList">
+                <option value="0.1">0.1</option>
+                <option value="0.5">0.5</option>
+                <option value="1.0">1.0</option>
+                <option value="5.0">5.0</option>
+            </datalist>
+            <p class="inputValue" id="frequencyValue">0.5 Hz</p>
+        </div>
+        <h3 class="speed">Speed</h3>
+        <h3 class="speed">= frequency x wavelength</h3>
+        <h3 class="speed" id="speed1">= 0.5 x 3.0</h3>
+        <h3 class="speed" id="speed2">= 1.500 cm/s</h3>
+
+    </div>
+    <canvas id="canvas"></canvas>
+</body>
+
+</html>

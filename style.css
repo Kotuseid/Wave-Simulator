@@ -1,0 +1,45 @@
+@font-face {
+    font-family: Rubik;
+    src: url(Rubik-Regular.ttf);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    /* overflow:hidden; */
+    display: flex;
+    flex-direction: row;
+    color: #202020;
+    font-family: Rubik;
+}
+
+div.controls {
+    width: 190px;
+    height: calc(100%-10px);
+    box-sizing: border-box;
+    border: 5px solid #0f0f0f;
+    background: #ddd;
+}
+
+canvas {
+    border: 7px dashed #bda30f;
+    /* border-radius: 10px; */
+    box-sizing: border-box;
+}
+
+div.input {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 5px;
+}
+
+p.inputValue {
+    font-size: 90%;
+}
+
+h3.speed {
+    text-align: center;
+}
