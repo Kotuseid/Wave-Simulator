@@ -79,17 +79,21 @@ function draw() {
     ctx.strokeStyle = "red";
     ctx.beginPath();
     ctx.moveTo(canvas.width - 80, canvas.height / 2);
+    ctx.lineTo(canvas.width - 80, canvas.height / 2 - amplitude / 2);
+    ctx.lineTo(canvas.width - 85, canvas.height / 2 - amplitude / 2);
+    ctx.lineTo(canvas.width - 75, canvas.height / 2 - amplitude / 2);
+    ctx.lineTo(canvas.width - 80, canvas.height / 2 - amplitude / 2);
     ctx.lineTo(canvas.width - 80, canvas.height / 2 - amplitude);
     ctx.lineTo(canvas.width - 70, canvas.height / 2 - amplitude + 10);
     ctx.lineTo(canvas.width - 80, canvas.height / 2 - amplitude);
     ctx.lineTo(canvas.width - 90, canvas.height / 2 - amplitude + 10);
     ctx.stroke();
     ctx.fillStyle = "red";
-    ctx.translate(canvas.width - 60, canvas.height/2-amplitude/2);
+    ctx.translate(canvas.width - 60, canvas.height / 2 - amplitude / 2);
     ctx.rotate(Math.PI / 2);
-    ctx.fillText("amplitude", 0, 0);   
+    ctx.fillText("amplitude", 0, 0);
     ctx.resetTransform();
-    
+
     //wavelength
     ctx.strokeStyle = "yellow";
     ctx.beginPath();
@@ -98,13 +102,17 @@ function draw() {
     ctx.lineTo(canvas.width - 100, canvas.height / 2 - 50);
     ctx.lineTo(canvas.width - 110, canvas.height / 2 - 40);
     ctx.lineTo(canvas.width - 100, canvas.height / 2 - 50);
+    ctx.lineTo(canvas.width - 100 - wavelength / 2, canvas.height / 2 - 50);
+    ctx.lineTo(canvas.width - 100 - wavelength / 2, canvas.height / 2 - 55);
+    ctx.lineTo(canvas.width - 100 - wavelength / 2, canvas.height / 2 - 45);
+    ctx.lineTo(canvas.width - 100 - wavelength / 2, canvas.height / 2 - 50);
     ctx.lineTo(canvas.width - 100 - wavelength, canvas.height / 2 - 50);
     ctx.lineTo(canvas.width - 90 - wavelength, canvas.height / 2 - 60);
     ctx.lineTo(canvas.width - 100 - wavelength, canvas.height / 2 - 50);
     ctx.lineTo(canvas.width - 90 - wavelength, canvas.height / 2 - 40);
     ctx.stroke();
     ctx.fillStyle = "yellow";
-    ctx.fillText("wavelength", canvas.width - 100 - wavelength/2, canvas.height / 2 - 70);
+    ctx.fillText("wavelength", canvas.width - 100 - wavelength / 2, canvas.height / 2 - 70);
 
 
 
@@ -117,5 +125,5 @@ setInterval(draw, 1000 / fps);
 
 function updateSpeedDisplay(w) {
     document.getElementById("speed1").innerText = "= " + frequency + " x " + w;
-    document.getElementById("speed2").innerText = "= " + (frequency*w).toFixed(3) + " cm/s";
+    document.getElementById("speed2").innerText = "= " + (frequency * w).toFixed(3) + " cm/s";
 }
