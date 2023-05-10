@@ -1,3 +1,5 @@
+let mobileCover = document.getElementById("mobileCover");
+
 let canvas = document.getElementById("canvas");
 let ctx = canvas.getContext("2d");
 
@@ -43,6 +45,13 @@ frequencyInput.onchange = () => { loop = true; };
 draw();
 
 function draw() {
+    if (window.innerWidth < window.innerHeight && !mobileCover.open) {
+        mobileCover.showModal();
+        loop = false;
+    } else if (window.innerWidth > window.innerHeight && mobileCover.open) {
+        mobileCover.close();
+        loop = true;
+    }
     canvas.width = window.innerWidth - 200;
     canvas.height = window.innerHeight - 14;
     canvas.style.background = "#000";
