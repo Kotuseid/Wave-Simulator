@@ -9,6 +9,7 @@
     <meta property="og:description"
         content="A simple wave simulator running in the web. Inspired by 9th grade science class.">
     <meta property="og:type" content="article">
+    <meta property="profile:username" content="Kotuseid">
     <meta property="og:url" content="https://kotuseid.github.io/Wave-Simulator/">
     <meta property="og:image" content="https://raw.githubusercontent.com/Kotuseid/Wave-Simulator/main/waveog.png" />
     <title>Wave Simulator</title>
@@ -28,7 +29,6 @@
         function drawIcon() {
             let iconLink = document.querySelector('link[rel*="icon"]');
 
-            console.log("icon");
             ctxIcon.clearRect(0, 0, canvas.width, canvas.height);
             ctxIcon.strokeStyle = "#FFF";
             ctxIcon.lineWidth = "3";
