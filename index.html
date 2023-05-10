@@ -5,12 +5,46 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Waves</title>
+    <title>Wave Simulator</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="wave.png" type="image/png">
+    <script>
+        let xoff = 0;
+        let canvasIcon,ctxIcon;
+        onload = () => {
+            canvasIcon = document.getElementById("icon")
+            ctxIcon = canvasIcon.getContext("2d");
+
+
+            setInterval(drawIcon, 100);
+
+        }
+        function drawIcon() {
+            let iconLink = document.querySelector('link[rel*="icon"]');
+
+            console.log("icon");
+            ctxIcon.clearRect(0, 0, canvas.width, canvas.height);
+            ctxIcon.strokeStyle = "#FFF";
+            ctxIcon.lineWidth = "3";
+
+            ctxIcon.beginPath();
+            ctxIcon.moveTo(-xoff, 16);
+            for (let x = xoff; x < 32 + xoff; x++) {
+                ctxIcon.lineTo(x - xoff, 16 + Math.sin(x * 2 * Math.PI / 30) * 10);
+            }
+            ctxIcon.stroke();
+            xoff++;
+            if (xoff == 30) {
+                xoff = 0;
+            }
+            iconLink.href = canvasIcon.toDataURL('image/png');
+        }
+    </script>
     <script src="main.js" defer></script>
 </head>
 
 <body>
+    <canvas id="icon" width="32" height="32" style="display: none;"></canvas>
     <div class="controls">
         <div class="input">
             <label for="amplitude">Amplitude</label>
